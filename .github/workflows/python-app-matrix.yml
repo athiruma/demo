@@ -48,9 +48,9 @@ jobs:
         export CMD_VALUE="python simple_math.py 4 5"
         export OUTPUT=$($CMD_VALUE)
 
-        echo "Run Simple Math" >> $GITHUB_STEP_SUMMARY
+        echo "### Run Simple Math" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "# I/P: 4 5" >> $GITHUB_STEP_SUMMARY
+        echo "I/P: 4 5" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "O/P: ${OUTPUT}" >> $GITHUB_STEP_SUMMARY
 
