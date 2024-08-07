@@ -54,11 +54,11 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "$CMD_VALUE" >> $GITHUB_STEP_SUMMARY
         echo "O/P: ${OUTPUT}" >> $GITHUB_STEP_SUMMARY
-
+        echo >> ec2.txt
         echo "# I/P: 4 5" >> e2e.txt
         echo "# O/P: ${OUTPUT}" >> e2e.txt
-    - name: Upload coverage data
-      uses: actions/upload-artifact@v3
+    - name: Upload ec2 output
+      uses: actions/upload-artifact@v4
       with:
         name: e2e.txt
         path: e2e.txt
