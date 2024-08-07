@@ -49,5 +49,13 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Run simple_math.py
       run: |
-        python simple_math.py
+        cat simple_math.py >> $GITHUB_STEP_SUMMARY
+        echo "\n" >> $GITHUB_STEP_SUMMARY
+        python simple_math.py 4, 5 | tee -a out.txt >> $GITHUB_STEP_SUMMARY
+    - name: Upload coverage data
+      uses: actions/upload-artifact@v3
+      with:
+        name: out.txt
+        path: out.txt
+        if-no-files-found: error    
   
