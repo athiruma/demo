@@ -45,17 +45,17 @@ jobs:
         python-version: '3.9'
     - name: Run simple_math.py
       run: |
-        CMD_VALUE="python simple_math.py 4 5"
-        value = $(CMD_VALUE)
+        export CMD_VALUE="python simple_math.py 4 5"
+        export OUTPUT = $(CMD_VALUE)
 
         cat simple_math.py >> $GITHUB_STEP_SUMMARY
         cat simple_math.py >> out.py
 
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "$CMD_VALUE" >> $GITHUB_STEP_SUMMARY
-        echo "O/P: $value" >> $GITHUB_STEP_SUMMARY
+        echo "O/P: ${OUTPUT}" >> $GITHUB_STEP_SUMMARY
 
-        echo "# ${CMD_VALUE}\n#O/P: $value" >> out.py
+        echo "# ${CMD_VALUE}\n#O/P: ${OUTPUT}" >> out.py
     - name: Upload coverage data
       uses: actions/upload-artifact@v3
       with:
