@@ -34,7 +34,7 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-  run:
+  e2e:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
@@ -46,7 +46,7 @@ jobs:
     - name: Run simple_math.py
       run: |
         cat simple_math.py >> $GITHUB_STEP_SUMMARY
-        echo """ >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
         python simple_math.py 4, 5 >> $GITHUB_STEP_SUMMARY
         python simple_math.py 4, 5 >> out.txt
     - name: Upload coverage data
