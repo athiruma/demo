@@ -55,8 +55,8 @@ jobs:
         echo "$CMD_VALUE" >> $GITHUB_STEP_SUMMARY
         echo "O/P: ${OUTPUT}" >> $GITHUB_STEP_SUMMARY
 
-        echo "# ${CMD_VALUE}" >> e2e.txt
-        echo "#O/P: ${OUTPUT}" >> e2e.txt
+        echo "# I/P: 4 5" >> e2e.txt
+        echo "# O/P: ${OUTPUT}" >> e2e.txt
     - name: Upload coverage data
       uses: actions/upload-artifact@v3
       with:
