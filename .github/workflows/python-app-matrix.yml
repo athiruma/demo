@@ -46,7 +46,7 @@ jobs:
     - name: Run simple_math.py
       run: |
         export CMD_VALUE="python simple_math.py 4 5"
-        export OUTPUT = $(CMD_VALUE)
+        export OUTPUT=$(CMD_VALUE)
 
         cat simple_math.py >> $GITHUB_STEP_SUMMARY
         cat simple_math.py >> out.py
