@@ -49,17 +49,17 @@ jobs:
         export OUTPUT=$(CMD_VALUE)
 
         cat simple_math.py >> $GITHUB_STEP_SUMMARY
-        cat simple_math.py >> out.py
+        cat simple_math.py >> e2e.txt
 
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "$CMD_VALUE" >> $GITHUB_STEP_SUMMARY
         echo "O/P: ${OUTPUT}" >> $GITHUB_STEP_SUMMARY
 
-        echo "# ${CMD_VALUE}\n#O/P: ${OUTPUT}" >> out.py
+        echo "# ${CMD_VALUE}\n#O/P: ${OUTPUT}" >> e2e.txt
     - name: Upload coverage data
       uses: actions/upload-artifact@v3
       with:
-        name: out.txt
-        path: out.txt
+        name: e2e.txt
+        path: e2e.txt
         if-no-files-found: error    
   
