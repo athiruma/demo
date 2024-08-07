@@ -46,8 +46,9 @@ jobs:
     - name: Run simple_math.py
       run: |
         cat simple_math.py >> $GITHUB_STEP_SUMMARY
-        echo "\n" >> $GITHUB_STEP_SUMMARY
-        python simple_math.py 4, 5 | tee -a out.txt >> $GITHUB_STEP_SUMMARY
+        echo """ >> $GITHUB_STEP_SUMMARY
+        python simple_math.py 4, 5 >> $GITHUB_STEP_SUMMARY
+        python simple_math.py 4, 5 >> out.txt
     - name: Upload coverage data
       uses: actions/upload-artifact@v3
       with:
