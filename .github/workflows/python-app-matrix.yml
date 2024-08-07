@@ -43,20 +43,19 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: '3.9'
-    - name: Run simple_math.py
+    - name: Run Simple Math
       run: |
         export CMD_VALUE="python simple_math.py 4 5"
         export OUTPUT=$($CMD_VALUE)
 
-        cat simple_math.py >> $GITHUB_STEP_SUMMARY
-        cat simple_math.py >> e2e.txt
-
+        echo "# I/P: 4 5" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
-        echo "$CMD_VALUE" >> $GITHUB_STEP_SUMMARY
         echo "O/P: ${OUTPUT}" >> $GITHUB_STEP_SUMMARY
-        echo "" >> ec2.txt
+
         echo "# I/P: 4 5" >> e2e.txt
+        echo "" >> ec2.txt
         echo "# O/P: ${OUTPUT}" >> e2e.txt
+
     - name: Upload ec2 output
       uses: actions/upload-artifact@v4
       with:
