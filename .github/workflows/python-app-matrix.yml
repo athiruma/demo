@@ -36,15 +36,13 @@ jobs:
         pytest
   run:
     needs: [build]
-    runs-on: ${{ matrix.os }}
-    python-version: '3.9'
-    os: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-version: ${{ matrix.python-version }}
+        python-version: '3.9'
     - name: Run simple_math.py
       run: |
         cat simple_math.py >> $GITHUB_STEP_SUMMARY
