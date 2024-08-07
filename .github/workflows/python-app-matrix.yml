@@ -50,6 +50,8 @@ jobs:
 
         echo "### Run Simple Math" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
+        echo "#### Add" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
         echo "I/P: 4 5" >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "O/P: ${OUTPUT}" >> $GITHUB_STEP_SUMMARY
