@@ -54,7 +54,7 @@ jobs:
         echo "" >> $GITHUB_STEP_SUMMARY
         echo "$CMD_VALUE" >> $GITHUB_STEP_SUMMARY
         echo "O/P: ${OUTPUT}" >> $GITHUB_STEP_SUMMARY
-        echo >> ec2.txt
+        echo "" >> ec2.txt
         echo "# I/P: 4 5" >> e2e.txt
         echo "# O/P: ${OUTPUT}" >> e2e.txt
     - name: Upload ec2 output
