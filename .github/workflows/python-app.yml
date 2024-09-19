@@ -30,10 +30,10 @@ jobs:
         - name: 🎁 Bump Version
           run: |
             git checkout main
-            git config --global user.email test@example.com
-            git config --global user.name  test
+            git config --global user.email "thirumaleshaaraveti@gmail.com"
+            git config --global user.name  "Thirumalesh Aaraveti"
             git config pull.rebase false  # merge (the default strategy)
-            touch test
-            git add test
+            echo "Hello World!" >> test
+            git commit -am "test"
             git pull https://${{ secrets.GITHUB_TOKEN }}@github.com/athiruma/demo main
             git push https://${{ secrets.GITHUB_TOKEN }}@github.com/athiruma/demo main
