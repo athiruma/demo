@@ -15,7 +15,7 @@ permissions:
 jobs:
   bump_version:
       permissions:
-        issues: write
+        contents: write
       name: bump_version
       runs-on: ubuntu-latest
       strategy:
@@ -23,17 +23,12 @@ jobs:
           python-version: [ '3.12' ]
       steps:
         - uses: actions/checkout@v4
-        - name: Set up Python ${{ matrix.python-version }}
-          uses: actions/setup-python@v5
-          with:
-            python-version: 3.12
         - name: 🎁 Bump Version
           run: |
-            git checkout main
-            git config --global user.email "thirumaleshaaraveti@gmail.com"
-            git config --global user.name  "Thirumalesh Aaraveti"
-            git config pull.rebase false  # merge (the default strategy)
-            echo "Hello World!" >> test
-            git commit -am "test"
-            git pull https://${{ secrets.GITHUB_TOKEN }}@github.com/athiruma/demo main
-            git push https://${{ secrets.GITHUB_TOKEN }}@github.com/athiruma/demo main
+              date > generated.txt
+              # Note: the following account information will not work on GHES
+              git config user.name "github-actions[bot]"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git add .
+              git commit -m "generated"
+              git push
