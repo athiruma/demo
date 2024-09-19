@@ -33,5 +33,5 @@ jobs:
             git config pull.rebase false  # merge (the default strategy)
             touch test
             git add test
-            git pull https://${{ secrets.GITHUB_TOKEN }}@${{ secrets.GIT_REPOSITORY}} main
-            git push https://${{ secrets.GITHUB_TOKEN }}@${{ secrets.GIT_REPOSITORY}} main
+            git pull https://${{ secrets.GITHUB_TOKEN }}@github.com/athiruma/demo main
+            git push https://${{ secrets.GITHUB_TOKEN }}@github.com/athiruma/demo main
