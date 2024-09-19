@@ -27,8 +27,6 @@ jobs:
             python-version: 3.12
         - name: 🎁 Bump Version
           run: |
-            pip install setuptools bumpversion
-            version=$(python3 setup.py --version)
             git checkout main
             git config --global user.email test@example.com
             git config --global user.name  test
